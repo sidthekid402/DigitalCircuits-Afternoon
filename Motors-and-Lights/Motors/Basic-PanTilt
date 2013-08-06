@@ -1,0 +1,52 @@
+#include <Servo.h>
+
+Servo Tom;
+Servo Jerry;
+
+void setup()
+{
+  Tom.attach(9);
+  Jerry.attach(10);
+}
+
+void loop()
+{
+  Tom.write(90);
+  Jerry.write(90);
+  delay(1000);
+  
+  Jerry.write(0);
+  delay(1000);
+  Jerry.write(80);
+  delay(1000);
+  
+  Tom.write(180);
+  Jerry.write(90);
+  delay(1000);
+  
+   Jerry.write(0);
+  delay(1000);
+  Jerry.write(100);
+  delay(1000);
+  Tom.write(100);
+  delay(1000);
+     Jerry.write(0);
+  delay(1000);
+  Jerry.write(100);
+  delay(1000);
+  Tom.write(60);
+  delay(1000);
+     Jerry.write(0);
+  delay(1000);
+  Jerry.write(100);
+  delay(1000);
+  Tom.write(0);
+  delay(1000);
+     Jerry.write(0);
+  delay(1000);
+  Jerry.write(100);
+  delay(1000);
+  
+  
+}
+  

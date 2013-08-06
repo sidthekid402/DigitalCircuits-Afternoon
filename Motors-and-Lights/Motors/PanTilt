@@ -1,13 +1,14 @@
+
 #include <Servo.h> 
 
-Servo Barney;
+Servo servz;
 
 int command = 0;
 
 
 void setup()
 {
-  Barney.attach(9);
+  servz.attach(9);
 
   Serial.begin(9600);  
 
@@ -15,6 +16,7 @@ void setup()
 
 void loop()
 {
+
   if( Serial.available() ) 
   {
       command = Serial.parseInt();
@@ -28,17 +30,23 @@ void loop()
       }
   }
   delay(10);
+
 }
 
-void scanUpAgain(int begin, int end, int slowness)
+void scanUp(int theBegin, int theEnd, int slowness)
 {
-for ( int i = begin ; i < end; i++)
-{
-Barney.write(i);
-delay(slowness);
+   for ( int i = theBegin ; i < theEnd; i++)
+      {
+        servs.write(i);
+        delay(slowness);  
+      } 
 }
-}
+
+void scanDown(int theBegin, int theEnd, int slowness)
 {
-  
-  
+   for ( int i = theBegin ; i > theEnd; i--)
+      {
+        servs.write(i);
+        delay(slowness);  
+      } 
 }

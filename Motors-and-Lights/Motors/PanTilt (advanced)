@@ -1,6 +1,7 @@
 #include <Servo.h> 
 
 Servo servz;
+Servo mervz;
 
 int command = 0;
 
@@ -8,6 +9,7 @@ int command = 0;
 void setup()
 {
   servz.attach(9);
+  mervz.attach(9)
 
   Serial.begin(9600);  
 
@@ -28,6 +30,7 @@ void loop()
       if (command == 0)
       { 
          servz.write(90);
+         mervz.write(90)
       }
       {
         if (command > 1 );
@@ -35,6 +38,7 @@ void loop()
       }
       {
         servz.write(command);
+        mervz.write(command)
       }
   }
   
@@ -47,6 +51,7 @@ void scanUp(int theBegin, int theEnd, int slowness)
    for ( int i = theBegin ; i < theEnd; i++)
       {
         servz.write(i);
+        mervz.write(i)
         delay(slowness);  
       } 
 }
@@ -56,6 +61,7 @@ void scanDown(int theBegin, int theEnd, int slowness)
    for ( int i = theBegin ; i > theEnd; i--)
       {
         servz.write(i);
+        mervz.write(i)
         delay(slowness);  
       } 
 }

@@ -1,0 +1,26 @@
+#include <Servo.h>
+Servo servz;
+Servo mervz;
+
+int pos;
+int storage;
+
+void setup()
+{
+  servz.attach(9);
+  mervz.attach(10);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  storage = analogRead(A0);
+  Serial.println(storage);
+  
+  pos = map(storage,0,1023,0,180);
+  Serial.println(pos);
+  servz.write(pos);
+  mervz.write(pos);
+  delay(500);
+  
+}
